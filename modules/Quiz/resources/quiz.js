@@ -450,7 +450,7 @@
             }
             var displayQuestion = $(".display-question");
             //Search for links and links patterns ( [text|http://exampl.com] ) and add a real link to a new tab
-            displayQuestion.text(cPo.question).attr({'tabindex': 5,"aria-label": cPo.question}).focus();
+            displayQuestion.text(cPo.question).attr({'tabindex': 5,"aria-lable":cPo.question,'id':"open-answer-text"}).focus();
             var questionText = this.wrapLinksWithTags(displayQuestion.html());
             displayQuestion.html(questionText);
             //$(".display-question").attr('title', "Question number "+questionNr);
@@ -545,7 +545,7 @@
 
             // textarea 
             interfaceElement.find(".open-question-textarea")
-            .attr("placeholder",gM('mwe-quiz-open-question-add-answer-here'))
+            .attr({"placeholder":gM('mwe-quiz-open-question-add-answer-here'),"aria-labelledby":"open-answer-text"})
             .off()
             .bind('change keyup paste', function() {
                 var charsLength = $(this).val().length;
